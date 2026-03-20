@@ -5,6 +5,7 @@ import { Building2, Wrench, TrendingDown } from "lucide-react";
 import { createClient } from "@/lib/supabase";
 import type { Activo, ReporteDepreciacion } from "@/types/database";
 import MetricCard from "@/components/MetricCard";
+import AssetList from "@/components/AssetList";
 
 function formatLempiras(monto: number) {
   return `L ${monto.toLocaleString("es-HN", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
@@ -109,6 +110,11 @@ export default function Home() {
             bgColor: "bg-surface-container/40",
           }}
         />
+      </div>
+
+      {/* Activos recientes */}
+      <div className="mt-8 lg:mt-12">
+        <AssetList activos={activos} loading={loading} />
       </div>
     </main>
   );
