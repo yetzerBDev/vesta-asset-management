@@ -15,16 +15,16 @@ import {
 } from "lucide-react";
 
 const navItems = [
-  { href: "/", label: "Inventory", icon: Package },
-  { href: "/financials", label: "Financials", icon: DollarSign },
-  { href: "/operations", label: "Operations", icon: Wrench },
-  { href: "/vendors", label: "Vendors", icon: Store },
-  { href: "/audit", label: "Audit", icon: ClipboardCheck },
+  { href: "/", label: "Inventario", icon: Package },
+  { href: "/financials", label: "Finanzas", icon: DollarSign },
+  { href: "/operations", label: "Operaciones", icon: Wrench },
+  { href: "/vendors", label: "Proveedores", icon: Store },
+  { href: "/audit", label: "Auditoría", icon: ClipboardCheck },
 ];
 
 const bottomItems = [
-  { href: "/help", label: "Help Center", icon: HelpCircle },
-  { href: "/signout", label: "Sign Out", icon: LogOut },
+  { href: "/help", label: "Centro de Ayuda", icon: HelpCircle },
+  { href: "/signout", label: "Cerrar Sesión", icon: LogOut },
 ];
 
 export default function Sidebar() {
@@ -47,7 +47,7 @@ export default function Sidebar() {
             VESTA
           </h2>
           <p className="font-label text-[10px] font-light opacity-60">
-            Asset Intelligence
+            Gestión de Activos
           </p>
         </div>
       </motion.div>

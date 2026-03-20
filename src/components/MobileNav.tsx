@@ -13,13 +13,13 @@ import {
 } from "lucide-react";
 
 const navItems = [
-  { href: "/", label: "Inventory", icon: Package },
-  { href: "/financials", label: "Financials", icon: DollarSign },
-  { href: "/operations", label: "Operations", icon: Wrench },
-  { href: "/vendors", label: "Vendors", icon: Store },
-  { href: "/audit", label: "Audit", icon: ClipboardCheck },
-  { href: "/help", label: "Help Center", icon: HelpCircle },
-  { href: "/signout", label: "Sign Out", icon: LogOut },
+  { href: "/", label: "Inventario", icon: Package },
+  { href: "/financials", label: "Finanzas", icon: DollarSign },
+  { href: "/operations", label: "Operaciones", icon: Wrench },
+  { href: "/vendors", label: "Proveedores", icon: Store },
+  { href: "/audit", label: "Auditoría", icon: ClipboardCheck },
+  { href: "/help", label: "Centro de Ayuda", icon: HelpCircle },
+  { href: "/signout", label: "Cerrar Sesión", icon: LogOut },
 ];
 
 interface MobileNavProps {
@@ -53,7 +53,7 @@ export default function MobileNav({ open, onClose }: MobileNavProps) {
                 VESTA
               </h2>
               <p className="font-label text-[10px] font-light opacity-60">
-                Asset Intelligence
+                Gestión de Activos
               </p>
             </div>
             {navItems.map((item, i) => {
