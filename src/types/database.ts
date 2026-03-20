@@ -13,9 +13,39 @@ export interface Database {
           estado: string;
           fecha_compra: string;
           ultima_modificacion: string;
+          categoria: string;
+          responsable: string;
+          imagen_url: string | null;
         };
-        Insert: Omit<Database["public"]["Tables"]["activos"]["Row"], "id" | "ultima_modificacion">;
-        Update: Partial<Database["public"]["Tables"]["activos"]["Row"]>;
+        Insert: {
+          codigo_qr: string;
+          nombre_equipo: string;
+          costo_inicial: number;
+          valor_rescate: number;
+          vida_util_anos: number;
+          sucursal_id: string;
+          estado: string;
+          fecha_compra: string;
+          categoria?: string;
+          responsable?: string;
+          imagen_url?: string | null;
+        };
+        Update: {
+          id?: string;
+          codigo_qr?: string;
+          nombre_equipo?: string;
+          costo_inicial?: number;
+          valor_rescate?: number;
+          vida_util_anos?: number;
+          sucursal_id?: string;
+          estado?: string;
+          fecha_compra?: string;
+          ultima_modificacion?: string;
+          categoria?: string;
+          responsable?: string;
+          imagen_url?: string | null;
+        };
+        Relationships: [];
       };
       sucursales: {
         Row: {
@@ -24,19 +54,35 @@ export interface Database {
           ciudad: string;
           creado_en: string;
         };
-        Insert: Omit<Database["public"]["Tables"]["sucursales"]["Row"], "id" | "creado_en">;
-        Update: Partial<Database["public"]["Tables"]["sucursales"]["Row"]>;
+        Insert: {
+          nombre: string;
+          ciudad: string;
+        };
+        Update: {
+          id?: string;
+          nombre?: string;
+          ciudad?: string;
+          creado_en?: string;
+        };
+        Relationships: [];
       };
     };
     Views: {
       reporte_depreciacion: {
         Row: {
           id: string;
+          codigo_qr: string;
           nombre_equipo: string;
           costo_inicial: number;
           valor_rescate: number;
           vida_util_anos: number;
+          sucursal_id: string;
+          estado: string;
           fecha_compra: string;
+          ultima_modificacion: string;
+          categoria: string;
+          responsable: string;
+          imagen_url: string | null;
           depreciacion_anual: number;
           anos_transcurridos: number;
           valor_actual_contable: number;

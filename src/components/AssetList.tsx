@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Package } from "lucide-react";
+import Link from "next/link";
 import type { Activo } from "@/types/database";
 
 /* ── Mapa de estados → colores (MD3 tokens de globals.css) ── */
@@ -61,12 +62,12 @@ export default function AssetList({ activos, loading }: AssetListProps) {
         <h3 className="text-xl font-bold font-headline text-primary">
           Activos Recientes
         </h3>
-        <a
+        <Link
           className="text-primary text-xs font-semibold underline underline-offset-4 hover:text-primary-container transition-colors"
-          href="#"
+          href="/activos"
         >
           Ver Inventario Completo
-        </a>
+        </Link>
       </div>
 
       {/* Lista */}
