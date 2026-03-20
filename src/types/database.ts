@@ -28,7 +28,21 @@ export interface Database {
         Update: Partial<Database["public"]["Tables"]["sucursales"]["Row"]>;
       };
     };
-    Views: Record<string, never>;
+    Views: {
+      reporte_depreciacion: {
+        Row: {
+          id: string;
+          nombre_equipo: string;
+          costo_inicial: number;
+          valor_rescate: number;
+          vida_util_anos: number;
+          fecha_compra: string;
+          depreciacion_anual: number;
+          anos_transcurridos: number;
+          valor_actual_contable: number;
+        };
+      };
+    };
     Functions: Record<string, never>;
     Enums: Record<string, never>;
   };
@@ -36,3 +50,4 @@ export interface Database {
 
 export type Activo = Database["public"]["Tables"]["activos"]["Row"];
 export type Sucursal = Database["public"]["Tables"]["sucursales"]["Row"];
+export type ReporteDepreciacion = Database["public"]["Views"]["reporte_depreciacion"]["Row"];
